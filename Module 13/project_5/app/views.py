@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . forms import contactForm,StudentData,passwordMatching
+from . forms import contactForm, StudentData, passwordMatching
 
 # Create your views here.
 
@@ -27,11 +27,11 @@ def djangoForm(request):
     if request.method == 'POST':
         form = contactForm(request.POST, request.FILES)
         if form.is_valid():
-            # file=form.cleaned_data['file']
-            # with open('./app/upload/' + file.name,'wb+') as destination:
-            #     for chunk in file.chunks():
-            #         destination.write(chunk)
-            # print('File Upload Successfully')
+            file = form.cleaned_data['file']
+            with open('./app/upload/' + file.name, 'wb+') as destination:
+                for chunk in file.chunks():
+                    destination.write(chunk)
+            print('File Upload Successfully')
             print(form.cleaned_data)
         return render(request, 'app/djangoForm.html', {'form': form})
     else:
@@ -43,11 +43,17 @@ def studentForm(request):
     if request.method == 'POST':
         form = StudentData(request.POST, request.FILES)
         if form.is_valid():
+            file = form.cleaned_data['file']
+            with open('./app/upload/' + file.name, 'wb+') as destination:
+                for chunk in file.chunks():
+                    destination.write(chunk)
+            print('File Upload Successfully')
             print(form.cleaned_data)
         return render(request, 'app/djangoForm.html', {'form': form})
     else:
         form = StudentData()
         return render(request, 'app/djangoForm.html', {'form': form})
+
 
 def passwordForm(request):
     if request.method == 'POST':
