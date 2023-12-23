@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% load crispy_forms_tags %} {% block content %} 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Roll</th>
+      <th scope="col">Name</th>
+      <th scope="col">Father Name</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{ roll }}</th>
+      <td>{{ name }}</td>
+      <td>{{ father }}</td>
+      <td>{{ address }}</td>
+    </tr>
+  </tbody>
+</table>
+{% endblock content %}

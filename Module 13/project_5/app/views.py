@@ -3,7 +3,6 @@ from . forms import contactForm, StudentData, passwordMatching
 
 # Create your views here.
 
-
 def home(request):
     return render(request, 'app/home.html')
 
@@ -11,7 +10,7 @@ def home(request):
 def about(request):
     if request.method == 'POST':
         print(request.POST)
-        name = request.POST.get('username')
+        name = request.POST.get('name')
         email = request.POST.get('email')
         select = request.POST.get('select')
         return render(request, 'app/about.html', {'name': name, 'email': email, 'select': select})
@@ -27,11 +26,11 @@ def djangoForm(request):
     if request.method == 'POST':
         form = contactForm(request.POST, request.FILES)
         if form.is_valid():
-            file = form.cleaned_data['file']
-            with open('./app/upload/' + file.name, 'wb+') as destination:
-                for chunk in file.chunks():
-                    destination.write(chunk)
-            print('File Upload Successfully')
+            # file = form.cleaned_data['file']
+            # with open('./app/upload/' + file.name, 'wb+') as destination:
+            #     for chunk in file.chunks():
+            #         destination.write(chunk)
+            # print('File Upload Successfully')
             print(form.cleaned_data)
         return render(request, 'app/djangoForm.html', {'form': form})
     else:
