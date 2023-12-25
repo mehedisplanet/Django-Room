@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% load crispy_forms_tags %} {% block content %}
+
+<h1>Home page</h1>
+{% if data %}
+<table method="POST" class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Musician Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Album Rating</th>
+      <th scope="col">Instrument Type</th>
+      <th scope="col">Album Name</th>
+      <th scope="col">Release Date</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+      <td scope="row">{{ i.id }}</td>
+      <td><a href="{% url 'editMusician' i.musician.id %}" class="text-decoration-none text-black">{{ i.musician.firstName }}</a></td>
+      <td>{{ i.musician.email }}</td>
+      <td>{{ i.rating }}</td>
+      <td>{{ i.musician.instrumentType }}</td>
+      <td>{{ i.albumName }}</td>
+      <td>{{ i.albumReleaseDate }}</td>
+      <td>
+        <a href="{% url 'editAlbum' i.id %}" class="btn btn-warning">Edit</a>
+        <a href="{% url 'deleteAlbum' i.id %}" class="btn btn-danger">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<h1 style="width:50%;margin:auto">No Available Data </h1>
+{% endif %} 
+{% endblock content %}
