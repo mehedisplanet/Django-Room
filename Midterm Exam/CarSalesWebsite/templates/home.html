@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="d-flex flex-wrap px-5 pt-3 align-items-center">
+  <div class="col-6">
+    <h1>Welcome to Car Park</h1>
+    <p>
+      A car, or an automobile, is a motor vehicle with wheels. Most definitions
+      of cars state that they run primarily on roads, seat one to eight people,
+      have four wheels, and mainly transport people, not cargo.[1][2] French
+      inventor Nicolas-Joseph Cugnot built the first steam-powered road vehicle
+      in 1769, while French-born Swiss inventor François Isaac de Rivaz designed
+      and constructed the first internal combustion-powered automobile in
+      1808.The modern car—a practical, marketable automobile for everyday
+      use—was invented in 1886, when German inventor Carl Benz patented his Benz
+      Patent-Motorwagen. Commercial cars became widely available during the 20th
+      century. One of the first cars affordable by the masses was the 1908 Model
+      T, an American car manufactured by the Ford Motor Company. Cars were
+      rapidly adopted in the US, where they replaced horse-drawn carriages.[3]
+      In Europe and other parts of the world, demand for automobiles did not
+      increase until after World War II.[4] The car is considered an essential
+      part of the developed economy.
+    </p>
+  </div>
+  <div class="col-6">
+    <img style="width: 100%" src="{% static 'Car.png' %}" />
+  </div>
+
+  <div class="p-4">
+    <h5>All Categories</h5>
+    {% for i in data_2 %}
+    <a href="{% url 'category_wise_post' i.slug  %}" class="btn btn-warning">{{ i.brandName }}</a>
+    {% endfor %}
+
+    <div class="col-12 p-3">
+      {% if data %}
+      <h4>{{data | length}} results found</h4>
+      <div class="d-flex flex-wrap pt-1">
+        {% for i in data %}
+        <div class="col-sm-3">
+          <div class="card m-2">
+            <div class="card-body">
+              {% if i.image.url is not None %}
+              <img src="{{i.image.url}}" class="card-img-top" alt="" />
+              {% endif %}
+              <p class="text-center">{{ i.carName }}</p>
+              <p>Price : {{ i.carPrice }}</p>
+              <p>Brand : {{ i.carBrandName }}</p>
+              <a href="{% url 'details_post' i.id %}" class="btn btn-primary btn-sm m-2">View Details</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <h3>No Car Available</h3>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock content %}
