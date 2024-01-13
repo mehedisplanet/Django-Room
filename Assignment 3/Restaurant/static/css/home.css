@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(175, 244, 244);
+}
+.home_img{
+    height: 700PX;
+    width: 100%;
+}
+.home{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content:space-around;
+}

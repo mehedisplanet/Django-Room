@@ -1,0 +1,95 @@
+# asgiref
+# attrs
+# beautifulsoup4
+# blinker
+# certifi
+# cffi
+# charset-normalizer
+# click
+# colorama
+# comtypes
+# contourpy
+# crispy-bootstrap5
+# cv-3
+# cycler
+# distlib
+# Django
+# django-crispy-forms
+# django-email
+# django-environ
+# EasyProcess
+# entrypoint2
+# env
+# filelock
+# Flask
+# flatbuffers
+# fonttools
+# google-trans-new
+# idna
+# itsdangerous
+# Jinja2
+# joblib
+# kiwisolver
+# MarkupSafe
+# matplotlib
+# mediapipe
+# MouseInfo
+# mss
+# mysql-connector-python
+# mysqlclient
+# nltk
+# numpy
+# opencv-contrib-python
+# opencv-python
+# packaging
+# Pillow
+# pipenv
+# platformdirs
+# pocketsphinx
+# protobuf
+# psycopg2
+# PyAudio
+# PyAutoGUI
+# pycparser
+# pygame
+# PyGetWindow
+# pyjokes
+# PyMsgBox
+# PyMySQL
+# pyparsing
+# pyperclip
+# pypiwin32
+# PyRect
+# pyscreenshot
+# PyScreeze
+# python-dateutil
+# pyttsx3
+# pytweening
+# pywhatkit
+# pywin32
+# regex
+# requests
+# six
+# sounddevice
+# soupsieve
+# speech-recognition-python
+# SpeechRecognition
+# sqlparse
+# tqdm
+# tzdata
+# urllib3
+# virtualenv
+# Werkzeug
+
+
+asgiref
+crispy-bootstrap5
+dj-database-url
+Django
+django-crispy-forms
+django-environ
+pillow
+psycopg2-binary
+sqlparse
+typing_extensions
+tzdata

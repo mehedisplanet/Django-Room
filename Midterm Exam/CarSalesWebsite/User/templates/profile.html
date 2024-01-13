@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{% load crispy_forms_tags %} 
+{% block content %}
+
+<div>
+  <a class="btn btn-primary" href="{% url 'edit_profile' %}">
+    Edit Your Profile</a
+  >
+</div>
+<div class="col-12 p-3">
+  <div class="d-flex flex-wrap pt-1">
+    {% for i in data %}
+    <div class="col-sm-3">
+      <div class="card m-2">
+        <div class="card-body">
+          {% if i.image.url is not None %}
+          <img src="{{i.image.url}}" class="card-img-top" alt="" />
+          {% endif %}
+          <p class="text-center">{{ i.carName }}</p>
+          <p>Price : {{ i.carPrice }}</p>
+          <p>Brand : {{ i.carBrandName }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

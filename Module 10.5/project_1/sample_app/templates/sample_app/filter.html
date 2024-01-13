@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span><a class="h" href="/sample_app/">Home</a></span>
+    <span><a href="/sample_app/contact/">Contact</a></span>
+    <span><a href="/sample_app/about/">About</a></span>
+    <span><a href="/sample_app/filter/">Filter</a></span>
+    <span>This Is FILTER Page</span>
+    <br>
+    <span>Name : {{name}}</span>
+    <span>Age : {{age}}</span>
+    <span>Gender : {{gender}}</span>
+    <span>Religion : {{religion}}</span>
+    <p>{{lst}}</p>
+
+    {% comment %} Conditional Statement {% endcomment %}
+    <h2>Conditional Statement---></h2>
+    {% if age >= 20 %}
+    <h3>You will get National ID card and Passport</h3>
+    {% elif age >= 18 %}
+    <h3>You will get Passport</h3>
+    {% elif age <= 17 %}
+    <h3>You will not get Passport</h3>
+    {%endif%}
+
+    {% comment %} For Loop {% endcomment %}
+    <h2>For Loop ---></h2>
+    {% for i in courses %}
+    <h3>{{i.id}} {{i.name}} {{i.fee}}</h3>
+    {% endfor %}
+
+    {% comment %} Django Template Filtering {% endcomment %}
+    <h2>Django Template Filtering ---></h2>
+
+    <h3>{{ courses | length }}</h3>
+    <h3>{{ name | add:"2" }}</h3>
+    <h3>{{ gender | addslashes }}</h3>
+    <h3>{{ gender | capfirst }}</h3>
+    <h3>{{ name | cut:" " }}</h3>
+    <h3>{{ birthday | date:"D d M Y" }}</h3>
+    <h3>{{ student | dictsort:"name" }}</h3>
+    <h3>{{ name | join:" // " }}</h3>
+    <h3>{{ gender | last }}</h3>
+    <h3>{{ name | linenumbers }}</h3>
+    <h3>{{ name | make_list }}</h3>
+    <h3>{{ slogan | slugify }}</h3>
+    <h3>{{ slogan | join:" // " }}</h3>
+    <h3>{{ birthday | date:"SHORT_DATE_FORMAT" }}</h3>
+    <h3>{{ empty | default:"nothing here" }}</h3>
+    <h3>{{ age | add:"5" }}</h3>
+    <h3>{{ gender | capfirst }}</h3>
+    <h3>{{ slogan | cut:" " }}</h3>
+    <h3>{{ student | length }}</h3>
+    <h3>{{ slogan | lower }}</h3>
+    <h3>{{ slogan | upper }}</h3>
+    <h3>{{ slogan | title }}</h3>
+    <h3>{{slogan | truncatechars:10 }}</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
